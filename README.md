@@ -1,27 +1,28 @@
+#### Bu çeviri, Türk radyo amatörlerinin anadilinde daha kolay erişebileceği bir kaynağın oluşturulmasını amaçlamaktadır.
+
 # LoRa APRS iGate
 
 [![Integration Tests](https://github.com/lora-aprs/LoRa_APRS_iGate/actions/workflows/build_check.yml/badge.svg)](https://github.com/lora-aprs/LoRa_APRS_iGate/actions/workflows/build_check.yml)
 
-The LoRa APRS iGate will work with very cheep hardware which you can buy from amazon, ebay or aliexpress.
-Try it out and be part of the APRS network.
+LoRa APRS iGate, Amazon, eBay veya AliExpress'ten satın alabileceğiniz çok ucuz donanımlarla çalışacaktır. Deneyin ve APRS ağına katılın.
 
 ![TTGO LoRa32](pics/iGate.png)
 
-## Blog posts and Youtube videos from other Hams
+## Diğer Amatörlerden Blog Gönderileri ve YouTube Videoları
 
-* [Manuel Lausmann - iGate & Tracker](https://www.youtube.com/watch?v=-KdFQEaNC1k) (youtube - german) 04.06.2021
-* [Manuel Lausmann - Installationsanleitung als PDF](http://mala-one.de/Lora-APRS/) (PDF - german) 04.06.2021
-* [OE1ROT](https://www.aronaut.at/2020/11/lora-aprs-gateway-mit-esp32-boards/) (blog post - german) 14.11.2020
-* [DL7AG](http://online.dl7ag.de/lora-aprs-dl7ag-10/) (blog post - german) 08.11.2020
-* [Manuel Lausmann - iGate](https://www.youtube.com/watch?v=C7hfVe32pXs) (youtube - german - OLD) 06.11.2020
-* [Manuel Lausmann - Tracker](https://www.youtube.com/watch?v=clIlTEFbWLk) (youtube - german - OLD) 02.11.2020
-* [OE1ROT](https://www.aronaut.at/2019/12/lora-aprs-tracker-mit-ttgo-t-beam-433mhz/) (blog post - german) 09.12.2019
+* [Manuel Lausmann - iGate & Tracker](https://www.youtube.com/watch?v=-KdFQEaNC1k) (YouTube - Almanca) 04.06.2021
+* [Manuel Lausmann - Installationsanleitung als PDF](http://mala-one.de/Lora-APRS/) (PDF - Almanca) 04.06.2021
+* [OE1ROT](https://www.aronaut.at/2020/11/lora-aprs-gateway-mit-esp32-boards/) (Blog yazısı - Almanca) 14.11.2020
+* [DL7AG](http://online.dl7ag.de/lora-aprs-dl7ag-10/) (Blog yazısı - Almanca) 08.11.2020
+* [Manuel Lausmann - iGate](https://www.youtube.com/watch?v=C7hfVe32pXs) (YouTube - Almanca - OLD) 06.11.2020
+* [Manuel Lausmann - Tracker](https://www.youtube.com/watch?v=clIlTEFbWLk) (YouTube - Almanca - OLD) 02.11.2020
+* [OE1ROT](https://www.aronaut.at/2019/12/lora-aprs-tracker-mit-ttgo-t-beam-433mhz/) (Blog yazısı - Almanca) 09.12.2019
 
-Feel free to add yours or create a ticket if you want to be added.
+Kendi bilgilerinizi ekleyin veya eklenmek istiyorsanız bir bilet oluşturun.
 
 ## Supported boards
 
-You can use one of the Lora32 boards without changes:
+Herhangi bir değişiklik yapmadan bir Lora32 kartından birini kullanabilirsiniz:
 
 * Heltec WiFi LoRa 32 V1 (433MHz SX1278)
 * Heltec WiFi LoRa 32 V2 (433MHz SX1278)
@@ -31,88 +32,86 @@ You can use one of the Lora32 boards without changes:
 * TTGO T-Beam V0.7 (433MHz SX1278)
 * TTGO T-Beam V1 (433MHz SX1278)
 * Tracker D from [OE1ACM and OE1CGC](https://www.lora-aprs.at/)
-* and sure many more...
+* ve tabii ki daha fazlası...
 
-Here are some amazon-de links for some example boards:
+İşte bazı örnek kartlar için amazon-de bağlantıları:
 * [LoRa32 V1](https://www.amazon.de/dp/B07VPHYYJD)
 * [LoRa32 V1](https://www.amazon.de/dp/B07QRG89ZV)
 * [LoRa32 V2](https://www.amazon.de/dp/B07VL97VNH)
 * [LoRa32 V2.1](https://www.amazon.de/dp/B07RXSKPBX)
 * [T-Beam V1.0](https://www.amazon.de/dp/B07RT9FKPL)
 
-This boards cost around 20 Euros, they are very cheap and perfect for an LoRa iGate.
-Keep in mind: you need a 433MHz version!
+Bu kartlar yaklaşık 20 Euro tutarında, çok ucuz ve LoRa iGate için mükemmel. Unutmayın: 433MHz sürümüne ihtiyacınız var!
 
-## Compiling and configuration
+## Derleme ve Yapılandırma
 
-**There is a german [quick start](https://www.lora-aprs.info/docs/LoRa_APRS_iGate/quick-start-guide/) page! Take a look ;)**
+**Almanca bir [hızlı başlangıç ](https://www.lora-aprs.info/docs/LoRa_APRS_iGate/quick-start-guide/) sayfası var! Bir göz atın;)**
 
-**There is a french [quick start](http://www.f5kmy.fr/spip.php?article509) page! Take a look ;)**
+**Fransızca bir [hızlı başlangıç](http://www.f5kmy.fr/spip.php?article509) sayfası var! Bir göz atın ;)**
 
-### How to compile
+### Nasıl derlenir
 
-The best success is to use PlatformIO (and it is the only platform where I can support you). 
+En iyi başarıyı PlatformIO kullanarak elde edersiniz (ve size destek olabileceğim tek platform budur).
 
-* Go to [PlatformIO](https://platformio.org/) download and install the IDE.
-* If installed open the IDE, go to the left side and click on 'extensions' then search for 'PlatformIO' and install.
-* When installed click 'the ant head' on the left and choose import the project on the right.
-* Just open the folder and you can compile the Firmware.
+* [PlatformIO](https://platformio.org/) gidin, IDE'yi indirin ve kurun.
+* Kurulduysa IDE'yi açın, soldaki tarafta 'uzantılar' a tıklayın, ardından 'PlatformIO' arayın ve kurulumu yapın.
+* Kurulduğunda sol taraftaki 'karınca başı' na tıklayın ve sağ tarafta projeyi içe aktarmayı seçin.
+* Sadece klasörü açın ve Yazılımı derleyebilirsiniz.
+  
+### Yapılandırma
 
-### Configuration
+* Tüm yapılandırma değişiklikleri için gerekli ayarları **data/is-cfg.json** dosyasında bulabilirsiniz.
+* Kartınıza yüklemek için bunu PlatformIO üzerinden **Upload File System image** şeklinde yapmanız gerekmektedir!
+* **Upload File System image** bulmak için PlatformIO simgesine (küçük uzaylı) tıklayın, yapılandırmanızı seçin, 'Platform' u tıklayın ve **Upload File System image** yi arayın.
 
-* You can find all necessary settings to change for your configuration in **data/is-cfg.json**.
-* To upload it to your board you have to do this via **Upload File System image** in PlatformIO!
-* To find the 'Upload File System image' click the PlatformIO symbol (the little alien) on the left side, choose your configuration, click on 'Platform' and search for 'Upload File System image'.
 
-## Branches in this repository and version system
+## Bu depoda dallar ve sürüm sistemi
 
-This firmware is developed in a rolling release system: everyday a new release could be created. But there are still rules where new pull requests has to go and and how the version system looks like.
+Bu yazılım, sürekli sürüm yayını sisteminde geliştirilmektedir: her gün yeni bir sürüm oluşturulabilir. Ancak, yeni pull isteklerinin nereye gideceği ve sürüm sisteminin nasıl görüneceği konusunda hala kurallar vardır.
 
-### Version system
+### Sürüm sistemi
 
-If the *develop* branch is stable enough for a new release it will be merged with a pull request to the *master* branch and a new version will be generated.
+Eğer develop dalı yeterince kararlıysa, yeni bir sürüm için birleştirilir ve master dala bir pull isteği ile birleştirilir ve yeni bir sürüm oluşturulur.
 
-The versions are based on this settings:
-* major: the current year (2 digits)
-* minor: the current week of the year
-* patch: if there is a important fix for an release, just increment the number, otherwise 0
+Sürümler şu ayarlara dayanmaktadır:
+* büyük: geçerli yıl (2 haneli)
+* küçük: yılın geçerli haftası
+* yama: önemli bir düzeltme varsa, sadece numarayı artırın, aksi takdirde 0
 
-*example*: a new release will be created on the 11/14/2020, this version numbers will be used: 
-* major: 20
-* minor: 46
-* patch: 0
+*örnek: 11/14/2020 tarihinde yeni bir sürüm oluşturulursa, bu sürüm numaraları kullanılacaktır:
+* büyük: 20
+* küçük: 46
+* yama: 0
 
-so the version will be: 20.46.0
+bu yüzden sürüm şu şekilde olacaktır: 20.46.0
 
-## Future plans
+## Gelecek Planlar
 
-* [x] show time until next beaconing
-* [x] show login issues from IS server
-* [ ] add better OLED library to support multiple different OLEDs
-* [x] add support to turn OLED on, off and dimming
-* [ ] add support for temperature chips (BMExxx)
-* [x] add FTP server support to upload configuration
-* [ ] add web server for configuration and other things
-* [ ] add statistics for received packages
-* [ ] show received packages on a map
-* [ ] etc.
+* [x] Sonraki yayına kadar zamanı göster
+* [x] IS sunucusundan giriş sorunlarını göster
+* [ ] Çeşitli farklı OLED'leri desteklemek için daha iyi bir OLED kütüphanesi ekleyin
+* [ ] Sıcaklık çipleri (BMExxx) için destek ekleyin
+* [x] Yapılandırmayı yüklemek için FTP sunucusu desteği ekleyin
+* [ ] Yapılandırma ve diğer şeyler için web sunucusu ekleyin
+* [ ] Alınan paketler için istatistikler ekleyin
+* [ ] Harita üzerinde alınan paketleri gösterin
+* [ ] vb.
 
 ## LoRa Tracker
 
-Look at my other project: a [LoRa Tracker](https://github.com/peterus/LoRa_APRS_Tracker)
+Diğer projeme bakın: a [LoRa Tracker](https://github.com/peterus/LoRa_APRS_Tracker)
 
-## Hints
+## İpuçları
 
-### Here are some peculiarities of the different boards
+### HFarklı kartların bazı özellikleri şunlardır
 
-* TTGO T-Beam V1.0 and V1.1 and SSD1306 OLED display
+* TTGO T-Beam V1.0 ve V1.1 ve SSD1306 OLED ekranı
 
-When adding an SSD1306 0,96" OLED display direct to the board you have to be careful, there are two different pinout
-versions on the market. 
-For direct mount you need a display with this Pinout -> [VCC - GND - SCL - SDA](pics/display-right.jpg).
-A direct mount of the [other display](pics/display-wrong.jpg) is not possible without damage the display!
-The 'wrong' display works too but you have to change VCC and GND by wire !
+SSD1306 0,96" OLED ekranını doğrudan kart üzerine eklerken dikkatli olmanız gerekir, çünkü piyasada iki farklı pinout versiyonu vardır.
+Doğrudan montaj için, bu Pinout'a sahip bir ekran gerekir -> [VCC - GND - SCL - SDA](pics/display-right.jpg).
+Diğer ekranın [doğrudan montajı](pics/display-wrong.jpg) teller olmadan mümkün değildir!
+'Wrong' ekran da çalışır ancak VCC ve GND'yi tel ile değiştirmeniz gerekir!
 
-The [LoRa APRS WiKi Displays](https://github.com/lora-aprs/LoRa_APRS_Tracker/wiki/Displays) page has more details.
+[LoRa APRS WiKi Displays](https://github.com/lora-aprs/LoRa_APRS_Tracker/wiki/Displays) sayfasında daha fazla ayrıntı bulunmaktadır.
 
-Feel free to add hints!
+İpuçları eklemekten çekinmeyin!
